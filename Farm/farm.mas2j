@@ -1,0 +1,21 @@
+/*
+    farm
+    ---------------------------
+
+    Jason Project File
+
+    This file defines the initial state of the MAS
+
+    Jason 2.5.1
+    május 12, 2021 - 21:59:32
+*/
+
+MAS farm {
+    infrastructure: Centralised
+                                      
+    environment: env.Farm(1,50,yes)
+
+    agents:
+        leader;
+        harvester #4;
+}
