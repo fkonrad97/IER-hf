@@ -1,6 +1,4 @@
-package mining;
-
-// Environment code for project jasonTeamSimLocal.mas2j
+package env;
 
 import jason.asSyntax.Literal;
 import jason.asSyntax.Structure;
@@ -100,7 +98,7 @@ public class Farm extends jason.environment.Environment {
     }
 
     private int getAgIdBasedOnName(String agName) {
-        return (Integer.parseInt(agName.substring(5))) - 1;
+        return (Integer.parseInt(agName.substring(9))) - 1;
     }
 
     public void initWorld(int w) {

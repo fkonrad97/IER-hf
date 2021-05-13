@@ -29,7 +29,7 @@ public class WorldView extends GridWorldView {
     Farm env = null;
 
     public WorldView(WorldModel model) {
-        super(model, "Mining World", 600);
+        super(model, "Farm", 600);
         setVisible(true);
         repaint();
     }
@@ -166,9 +166,9 @@ public class WorldView extends GridWorldView {
         case WorldModel.CROP:
             drawCrop(g, x, y);
             break;
-        case WorldModel.ENEMY:
+        /*case WorldModel.ENEMY:
             drawEnemy(g, x, y);
-            break;
+            break;*/
         }
     }
 
@@ -195,7 +195,7 @@ public class WorldView extends GridWorldView {
     }
 
     public void drawCrop(Graphics g, int x, int y) {
-        g.setColor(Color.yellow);
+        g.setColor(Color.green);
         g.drawRect(x * cellSizeW + 2, y * cellSizeH + 2, cellSizeW - 4, cellSizeH - 4);
         int[] vx = new int[4];
         int[] vy = new int[4];
@@ -210,10 +210,10 @@ public class WorldView extends GridWorldView {
         g.fillPolygon(vx, vy, 4);
     }
 
-    public void drawEnemy(Graphics g, int x, int y) {
+    /*public void drawEnemy(Graphics g, int x, int y) {
         g.setColor(Color.red);
         g.fillOval(x * cellSizeW + 7, y * cellSizeH + 7, cellSizeW - 8, cellSizeH - 8);
-    }
+    }*/
 
     public static void main(String[] args) throws Exception {
         Farm env = new Farm();

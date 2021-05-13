@@ -181,12 +181,12 @@ public class Farm extends jason.environment.Environment {
             if (model.hasObject(WorldModel.CROP, x, y)) {
                 addPercept(agName, Literal.parseLiteral("cell(" + x + "," + y + ",crop)"));
             }
-            if (model.hasObject(WorldModel.ENEMY, x, y)) {
+            /*if (model.hasObject(WorldModel.ENEMY, x, y)) {
                 addPercept(agName, Literal.parseLiteral("cell(" + x + "," + y + ",enemy)"));
             }
             if (model.hasObject(WorldModel.AGENT, x, y)) {
                 addPercept(agName, Literal.parseLiteral("cell(" + x + "," + y + ",ally)"));
-            }
+            }*/
         }
     }
 

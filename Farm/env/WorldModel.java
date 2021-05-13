@@ -13,7 +13,7 @@ public class WorldModel extends GridWorldModel {
 
     public static final int   CROP  = 16;
     public static final int   DEPOT = 32;
-    public static final int   ENEMY = 64;
+    //public static final int   ENEMY = 64;
 
     Location                  depot;
     Set<Integer>              agWithCrop;  // which agent is carrying crop

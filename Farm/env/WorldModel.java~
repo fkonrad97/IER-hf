@@ -1,4 +1,4 @@
-package mining;
+package env;
 
 import jason.environment.grid.GridWorldModel;
 import jason.environment.grid.Location;
@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import mining.Farm.Move;
+import env.Farm.Move;
 
 public class WorldModel extends GridWorldModel {
 
@@ -20,7 +20,7 @@ public class WorldModel extends GridWorldModel {
     int                       cropsInDepot   = 0;
     int                       initialNbCrops = 0;
 
-    private Logger            logger   = Logger.getLogger("jasonTeamSimLocal.mas2j." + WorldModel.class.getName());
+    private Logger            logger   = Logger.getLogger("farm.mas2j." + WorldModel.class.getName());
 
     private String            id = "WorldModel";
 
