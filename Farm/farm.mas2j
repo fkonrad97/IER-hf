@@ -18,4 +18,7 @@ MAS farm {
     agents:
         leader;
         harvester #4;
+		heat;
+		cooler;
+		picker;
 }
