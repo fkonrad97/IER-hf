@@ -19,6 +19,7 @@ public class WorldModel extends GridWorldModel {
     Set<Integer>              agWithCrop;  // which agent is carrying crop
     int                       cropsInDepot   = 0;
     int                       initialNbCrops = 0;
+	int						  size = 0;
 
     private Logger            logger   = Logger.getLogger("farm.mas2j." + WorldModel.class.getName());
 
@@ -44,8 +45,13 @@ public class WorldModel extends GridWorldModel {
 
     private WorldModel(int w, int h, int nbAgs) {
         super(w, h, nbAgs);
+		size = h;
         agWithCrop = new HashSet<Integer>();
     }
+	
+	public int getSize(){
+		return size;
+	}
 
     public String getId() {
         return id;
@@ -191,7 +197,7 @@ public class WorldModel extends GridWorldModel {
     */
 
 
-    /** no crop/no obstacle world */
+    //no crop/no obstacle world
     static WorldModel world1() throws Exception {
         WorldModel model = WorldModel.create(21, 21, 4);
         model.setDepot(5, 7);
@@ -203,7 +209,7 @@ public class WorldModel extends GridWorldModel {
         return model;
     }
 
-    /** world with crop, no obstacle */
+
     static WorldModel world2() throws Exception {
         WorldModel model = WorldModel.create(35, 35, 4);
         model.setId("Scenario 4");
@@ -228,6 +234,8 @@ public class WorldModel extends GridWorldModel {
         model.setInitialNbCrops(model.countObjects(WorldModel.CROP));
         return model;
     }
+
+
 
     /** world with crop and obstacles */
     static WorldModel world3() throws Exception {
@@ -319,8 +327,8 @@ public class WorldModel extends GridWorldModel {
         model.add(WorldModel.OBSTACLE, 16, 19);
         model.add(WorldModel.OBSTACLE, 17, 19);
 
-        model.add(WorldModel.OBSTACLE, 19, 19);
-        model.add(WorldModel.OBSTACLE, 19, 18);
+        model.add(WorldModel.OBSTACLE, 20, 19);
+        model.add(WorldModel.OBSTACLE, 19, 17);
 
         model.add(WorldModel.OBSTACLE, 19, 16);
         model.add(WorldModel.OBSTACLE, 19, 15);
@@ -331,21 +339,15 @@ public class WorldModel extends GridWorldModel {
         model.add(WorldModel.OBSTACLE, 16, 13);
         model.add(WorldModel.OBSTACLE, 15, 13);
 
-        // labirinto
+        //
         model.add(WorldModel.OBSTACLE, 2, 32);
         model.add(WorldModel.OBSTACLE, 3, 32);
         model.add(WorldModel.OBSTACLE, 4, 32);
         model.add(WorldModel.OBSTACLE, 5, 32);
-        model.add(WorldModel.OBSTACLE, 6, 32);
         model.add(WorldModel.OBSTACLE, 7, 32);
         model.add(WorldModel.OBSTACLE, 8, 32);
         model.add(WorldModel.OBSTACLE, 9, 32);
         model.add(WorldModel.OBSTACLE, 10, 32);
-        model.add(WorldModel.OBSTACLE, 10, 31);
-        model.add(WorldModel.OBSTACLE, 10, 30);
-        model.add(WorldModel.OBSTACLE, 10, 29);
-        model.add(WorldModel.OBSTACLE, 10, 28);
-        model.add(WorldModel.OBSTACLE, 10, 27);
         model.add(WorldModel.OBSTACLE, 10, 26);
         model.add(WorldModel.OBSTACLE, 10, 25);
         model.add(WorldModel.OBSTACLE, 10, 24);
@@ -363,9 +365,6 @@ public class WorldModel extends GridWorldModel {
         model.add(WorldModel.OBSTACLE, 2, 27);
         model.add(WorldModel.OBSTACLE, 2, 26);
         model.add(WorldModel.OBSTACLE, 2, 25);
-        model.add(WorldModel.OBSTACLE, 2, 24);
-        model.add(WorldModel.OBSTACLE, 2, 23);
-        model.add(WorldModel.OBSTACLE, 2, 29);
         model.add(WorldModel.OBSTACLE, 3, 29);
         model.add(WorldModel.OBSTACLE, 4, 29);
         model.add(WorldModel.OBSTACLE, 5, 29);
@@ -373,9 +372,6 @@ public class WorldModel extends GridWorldModel {
         model.add(WorldModel.OBSTACLE, 7, 29);
         model.add(WorldModel.OBSTACLE, 7, 28);
         model.add(WorldModel.OBSTACLE, 7, 27);
-        model.add(WorldModel.OBSTACLE, 7, 26);
-        model.add(WorldModel.OBSTACLE, 7, 25);
-        model.add(WorldModel.OBSTACLE, 6, 25);
         model.add(WorldModel.OBSTACLE, 5, 25);
         model.add(WorldModel.OBSTACLE, 4, 25);
         model.add(WorldModel.OBSTACLE, 4, 26);

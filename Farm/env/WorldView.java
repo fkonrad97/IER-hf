@@ -47,6 +47,7 @@ public class WorldView extends GridWorldView {
     @Override
     public void initComponents(int width) {
         super.initComponents(width);
+
         scenarios = new JComboBox();
         for (int i=1; i<=3; i++) {
             scenarios.addItem(i);

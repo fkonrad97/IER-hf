@@ -4,6 +4,7 @@ import jason.asSyntax.Literal;
 import jason.asSyntax.Structure;
 import jason.asSyntax.Term;
 import jason.environment.grid.Location;
+import java.lang.Math;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -73,6 +74,11 @@ public class Farm extends jason.environment.Environment {
             } else if (action.equals(down)) {
                 result = model.move(Move.DOWN, agId);
             } else if (action.equals(right)) {
+                int x = (int)((Math.random()*(model.getSize()-1)) + 1);
+                int y = (int)((Math.random()*(model.getSize()-1)) + 1);
+				if(Math.random() < 0.05 && 
+					!model.hasObject(WorldModel.CROP, x, y) && 
+					!model.hasObject(WorldModel.OBSTACLE, x, y))	model.add(WorldModel.CROP, x, y);
                 result = model.move(Move.RIGHT, agId);
             } else if (action.equals(left)) {
                 result = model.move(Move.LEFT, agId);
